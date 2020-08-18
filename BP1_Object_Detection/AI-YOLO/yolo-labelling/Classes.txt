@@ -1,0 +1,30 @@
+100 insulator
+101 insulator cracked
+102 insulator damaged ring
+103 insulator missing disc
+
+200 vibration dampener
+201 vibration dampener damaged
+
+300 nuts, bolts & hairpins
+301 nuts, bolts & hairpins missing split
+
+400 pylon
+401 pylon bent
+402 pylon corrosion
+403 pylon debris
+
+500 cable
+501 cable bent
+502 cable lightning strike
+503 cable debris
+
+600 phase separator
+
+700 spacers
+
+10000 other
+10001 other bird nest
+10002 other vegetation
+10003 other antenna
+10004 other flashing beacons

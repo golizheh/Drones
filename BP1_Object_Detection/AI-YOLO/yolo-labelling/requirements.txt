@@ -1,0 +1,5 @@
+lxml==4.5.0
+PyQt5==5.14.1
+PyQt5-sip==12.7.1
+autopy==4.0.0
+pyscreenshot
