@@ -788,10 +788,7 @@
       });
 
       drones.subscribe(function(message) {
-         // From message get Id and find drone
-         let id = message.data[2].toString();
-         //let drone = drone_dict[id];
-
+        
          // if the drone exist
          if (drone_dict[id] != undefined) {
             //update drone coordinate
@@ -805,14 +802,14 @@
                   drone.setStyle(droneWorkStyle);
                };
             };
-         // if the drone does not exist, make a new drone
+        
          } else {
             //Make new feaature for the drone, and insert attributes
             drone_dict[id] = new ol.Feature({
                geometry: new ol.geom.Point(ol.proj.fromLonLat([message.data[0], message.data[1]])),
                name: 'drone',
                id: message.data[2],
-               // work types: 0=none, r=recharge, 1=working
+               
                work: message.data[3]
             });
             let drone = drone_dict[id];
@@ -832,9 +829,7 @@
       });
 
       image_topic.subscribe(function(message) {
-         // get coordinates from the image file name
-         var name = message.header.frame_id.split("(")[0].split(",");
-         var cordinate = [parseFloat(name[0]),parseFloat(name[1])];
+        
 
          // check if error site does not exist
          if (error_dict[cordinate] == undefined) {
@@ -929,22 +924,8 @@
       });
       // #################### END OF ROS ####################
 
-      // #################### Artificial drone feature and error site for testing ####################
-      // normally this would not be a part of the code, but for interacting with the bachelor and see the weboage functionality
-      // we dicided to let it stay
-
-      // drone feature aded to the dict, ID='1'
-      drone_dict['1'] = new ol.Feature({
-         geometry: new ol.geom.Point(ol.proj.fromLonLat([10.507, 55.3])),
-         name: 'drone',
-         id: '1',
-         work: 0
-      });
-      // adding the style and set the drone on the layer
-      drone_dict['1'].setStyle(droneWorkStyle);
-      vl_drones.getSource().addFeature(drone_dict['1']);
-
-      // drone feature aded to the dict, ID='1'
+   
+    
       drone_dict['2'] = new ol.Feature({
          geometry: new ol.geom.Point(ol.proj.fromLonLat([11.3, 55.30])),
          name: 'drone',
